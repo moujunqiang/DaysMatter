@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.daysmatter">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/time"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/time"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.android.daysmatter.AddTypeActivity"></activity>
+        <activity android:name="com.android.daysmatter.TypeManagerActivity" />
+        <activity android:name="com.android.daysmatter.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.android.daysmatter.MatterAddActivity" />
+        <activity
+            android:name="com.android.daysmatter.MatterDetailActivity"
+            android:parentActivityName="com.android.daysmatter.MainActivity" />
+        <activity android:name="com.android.daysmatter.MatterEditActivity" />
+
+        <receiver
+            android:name="com.android.daysmatter.receiver.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.daysmatter.widget.MatterAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/matter_app_widget_info" />
+        </receiver>
+            <activity android:name="com.android.daysmatter.TypeListActivity"/>
+        <activity android:name="com.android.daysmatter.QueryByTypeActivity"/>
+        <service
+            android:name="com.android.daysmatter.widget.ListViewService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <service
+            android:name="com.android.daysmatter.service.NotificationService"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>

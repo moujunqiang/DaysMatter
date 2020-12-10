@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="theme">#0c0c0d</color>
+    <color name="future">#2e78da</color>
+    <color name="future_light">#387fe1</color>
+    <color name="expired">#e96d2a</color>
+    <color name="expired_light">#eb7e43</color>
+    <color name="dark">#302f2f</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#d11616</color>
+</resources>
